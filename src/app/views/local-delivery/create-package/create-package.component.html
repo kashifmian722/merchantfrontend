@@ -1,33 +1,33 @@
 <div class="create-delivery-package">
   <div class="intro">
-    <h3>Lieferung erstellen</h3>
-    <p>Um Deinen Kunden Produkte unkompliziert bis nach Hause liefern zu können, musst Du hier noch die benötigten Informationen ausfüllen.</p>
+    <h3>Create delivery</h3>
+    <p>In order to be able to easily deliver products to your customers' homes, you still have to fill in the required information here.</p>
   </div>
 
   <form [formGroup]="packageCreationForm" clrForm>
     <div class="form-group">
-      <h4>Paketinhalt</h4>
+      <h4>Package content</h4>
 
       <clr-textarea-container>
-        <label>Inhalte</label>
+        <label>Content</label>
         <textarea clrTextarea id="content" formControlName="content"
                   placeholder="Comic Klassiker&#10;Spezialheft&#10;Comic des Monats Mai">
         </textarea>
       </clr-textarea-container>
 
       <clr-input-container>
-        <label>Gesamtsumme</label>
+        <label>Total</label>
         <input type="number" name="price" clrInput placeholder="54,95" formControlName="price"/>
         <clr-icon shape="euro"></clr-icon>
-        <clr-control-error>Bitte gib einen Preis ein.</clr-control-error>
+        <clr-control-error>Please enter a price.</clr-control-error>
       </clr-input-container>
     </div>
 
     <div class="form-group">
-      <h4>Lieferant</h4>
+      <h4>Supplier</h4>
 
       <clr-select-container>
-        <label>Liefermethode</label>
+        <label>Delivery method</label>
         <select clrSelect name="shippingMethod" formControlName="shippingMethod">
           <option *ngFor="let shippingMethod of shippingMethods" [value]="shippingMethod">{{shippingMethod.name}}</option>
         </select>
@@ -41,7 +41,7 @@
       </clr-select-container>
 
       <clr-textarea-container>
-        <label>Kommentar für Lieferant*in</label>
+        <label>comment for Lieferant*in</label>
         <textarea clrTextarea id="comment" formControlName="comment"
                   placeholder="Lege die Comics zur Abholung vor die Haustür. Bitte wasserdichte Liefertasche mitbringen.">
         </textarea>
@@ -49,12 +49,12 @@
     </div>
 
     <div class="form-group">
-      <h4>Lieferadresse</h4>
+      <h4>Shipping address</h4>
 
       <clr-select-container>
         <label>Anrede</label>
         <select clrSelect name="title" formControlName="recipientTitle">
-          <option value="">Bitte wähle eine Anrede ...</option>
+          <option value="">Please choose a title...</option>
           <option value="mr">Herr</option>
           <option value="mrs">Frau</option>
           <option value="divers">Divers</option>
@@ -64,32 +64,32 @@
       <clr-input-container>
         <label>Vorname</label>
         <input type="text" name="firstName" clrInput placeholder="Sabine" formControlName="recipientFirstName"/>
-        <clr-control-error>Bitte gib Deinen Vornamen ein.</clr-control-error>
+        <clr-control-error>Please enter your first name.</clr-control-error>
       </clr-input-container>
 
       <clr-input-container>
-        <label>Nachname</label>
+        <label>Surname</label>
         <input type="text" name="lastName" clrInput placeholder="Muster" formControlName="recipientLastName"/>
-        <clr-control-error>Bitte gib Deinen Nachnamen ein.</clr-control-error>
+        <clr-control-error>Please enter your last name.</clr-control-error>
       </clr-input-container>
 
       <clr-input-container>
-        <label>Straße & Hausnummer</label>
+        <label>Street, House number</label>
         <input type="text" name="street" clrInput placeholder="Musterstraße 18" formControlName="recipientStreet"/>
-        <clr-control-error>Bitte gib eine Straße und eine Hausnummer ein.</clr-control-error>
+        <clr-control-error>Please enter a street and house number.</clr-control-error>
       </clr-input-container>
 
       <div class="two-column">
         <clr-input-container>
-          <label>Postleitzahl</label>
+          <label>Postal code</label>
           <input type="text" name="zipcode" clrInput placeholder="48143" formControlName="recipientZipcode"/>
-          <clr-control-error>Bitte gib eine Postleitzahl ein.</clr-control-error>
+          <clr-control-error>Please enter a zip code.</clr-control-error>
         </clr-input-container>
 
         <clr-input-container>
-          <label>Stadt</label>
+          <label>City</label>
           <input type="text" name="city" clrInput placeholder="Münster" formControlName="recipientCity"/>
-          <clr-control-error>Bitte gib einen Stadtnamen ein.</clr-control-error>
+          <clr-control-error>Please enter a city name.</clr-control-error>
         </clr-input-container>
       </div>
     </div>
