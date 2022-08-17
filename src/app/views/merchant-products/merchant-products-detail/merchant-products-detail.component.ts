@@ -98,10 +98,10 @@ export class MerchantProductsDetailComponent implements OnInit{
       })).subscribe((product: {data: Product}) => {
         let toastMessage;
         if (this.newProduct === true) {
-          toastMessage = 'Produkt erstellt';
+          toastMessage = 'Product created';
           this.newProduct = false;
         } else {
-          toastMessage = 'Produkt aktualisiert';
+          toastMessage = 'Product updated';
         }
         this.form.get('id').setValue(product.data.id);
         this.form.get('media').setValue(null);
@@ -110,7 +110,7 @@ export class MerchantProductsDetailComponent implements OnInit{
         this.saveInProgress = false;
     },
       () => {
-        this.toastService.error('Fehler', 'Beim Speichern des Produktes ist ein Fehler aufgetreten.');
+        this.toastService.error('error', 'An error occurred while saving the product.');
         this.saveInProgress = false;
       },
       );
